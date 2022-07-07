@@ -28,6 +28,7 @@ const DUMMY_EXPENSES = [
 ];
 function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [show, setShow] = useState(false);
   const addExpenseHandler = expense => {
     setExpenses(prevExpenses => {
       let newArray = [expense, ...prevExpenses];
@@ -38,6 +39,7 @@ function App() {
     console.log("In App.js");
     console.log(expense);
   };
+
   // const [newYear, setNewYear] = useState(0);
 
   // const filterChangeHandler = selectedYear => {
@@ -61,7 +63,12 @@ function App() {
 
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <button onClick={() => setShow(true)}>Add New Expense</button>
+      <NewExpense
+        onAddExpense={addExpenseHandler}
+        show={show}
+        // onClose={() => setShow(false)}
+      ></NewExpense>
       <Expenses itemtest={expenses}></Expenses>
     </div>
   );

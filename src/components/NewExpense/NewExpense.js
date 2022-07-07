@@ -9,10 +9,18 @@ const NewExpense = props => {
     // console.log(expenseData);
     props.onAddExpense(expenseData);
   };
-
+  const setView = () => {
+    props.setShow(false);
+  };
+  if (!props.show) {
+    return null;
+  }
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}></ExpenseForm>
+      <ExpenseForm
+        onSaveExpenseData={saveExpenseDataHandler}
+        onClose={setView}
+      ></ExpenseForm>
     </div>
   );
 };
