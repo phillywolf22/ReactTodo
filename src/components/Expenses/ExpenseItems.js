@@ -10,7 +10,7 @@ function ExpenseItem(props) {
   const clickHandler = () => {
     // title = 'Philip is cool'
 
-    setTitle("Phil is cool!");
+    setTitle("Phil is a DBA!");
     // console.log(title);
   };
 
