@@ -38,9 +38,9 @@ const ExpenseForm = props => {
     setEnteredAmount("");
     setEnteredDate("");
   };
-  const closeModal = () => {
-    props.onClose();
-  };
+  // const closeModal = () => {
+  //   props.onClose();
+  // };
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -74,7 +74,7 @@ const ExpenseForm = props => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={closeModal}>
+        <button type="button" onClick={props.onClose}>
           Cancel
         </button>
         <button type="submit">Add Expense</button>
